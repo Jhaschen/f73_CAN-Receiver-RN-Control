@@ -45,6 +45,7 @@ int main() {
         
         int status = can_get_message(&recvMsg);
         if (status) { // did we receive something?
+            ledToggle(1);
             printf("%8lu ms RecCanMsg: ID 0x%02x; Length %2d; Data: ", currentTimeStep, recvMsg.id, recvMsg.length);
                 for (uint8_t i = 0; i < recvMsg.length; i++)
                 {
